@@ -1,48 +1,48 @@
-## Malicious URL Detection System
+# Safelink Detection
 
-This project is a complete web-based application for detecting **malicious URLs** using machine learning and real-time feature extraction. It uses a Flask backend, a trained Gradient Boosting model, and a custom-built feature extraction engine that analyzes the structure, behavior, and metadata of URLs.
-
----
-
-##  How It Works
-
-1. **User inputs a URL** through the web interface.
-2. **Features are extracted** from the URL using WHOIS info, domain structure, and content analysis.
-3. **Trained model (model.pkl)** classifies the URL as **Safe** or **Malicious**.
-4. **Confidence score** is displayed to the user on the frontend.
+Safelink Detection is a web-based application designed to identify malicious URLs using machine learning and real-time feature extraction. The system utilizes a Flask backend, a trained Gradient Boosting model, and a custom feature extraction engine to analyze the structure, behavior, and metadata of URLs.
 
 ---
 
-##  Features Extracted (30)
+## How It Works
 
-This project extracts a rich set of features, including:
+1. **User Input:** The user provides a URL through the web interface.
+2. **Feature Extraction:** Features are extracted from the URL, including WHOIS information, domain structure, and content analysis.
+3. **Classification:** A trained Gradient Boosting model classifies the URL as Safe or Malicious.
+4. **Results:** The system displays the classification result and a confidence score to the user.
 
-- IP Address in URL
-- Length of URL / domain
-- Shortened URL detection (bit.ly, tinyurl, etc.)
-- `@` symbols and redirect patterns
-- HTTPS presence
-- WHOIS info like domain age and registration length
-- JavaScript-based attacks (popups, status bar spoofing)
-- Google Index presence
-- Alexa/Rank checks
-- DNS and traffic validation
-- Suspicious TLDs and IP blocks
+---
 
-> All feature logic is encapsulated in `feature.py`.
+## Features Extracted
+
+The project extracts 30 distinct features to ensure accurate detection, including:
+
+*   IP Address presence in URL
+*   URL and Domain length analysis
+*   Shortened URL detection (e.g., bit.ly, tinyurl)
+*   Presence of @ symbols and redirect patterns
+*   HTTPS availability
+*   WHOIS data (domain age, registration length)
+*   JavaScript-based anomaly detection (popups, status bar spoofing)
+*   Google Index status
+*   Alexa Rank verification
+*   DNS and traffic validation
+*   Suspicious TLD and IP block checking
+
+All feature extraction logic is implemented in `feature.py`.
 
 ---
 
 ## Frontend
 
-- **Responsive HTML/CSS**
-- URL input field with submit button
-- Shows result as:
-  -  Safe
-  -  Unsafe
-- Background styling via `url.jpeg`
+*   Responsive HTML/CSS interface.
+*   Intuitive URL input field.
+*   Clear display of safety status (Safe or Unsafe).
+*   Visual styling powered by custom CSS.
 
 ---
 
-This project successfully demonstrates how machine learning can be used to detect malicious URLs with high accuracy. Through detailed feature extraction and model comparison, we found that the Gradient Boosting Classifier delivered the best performance with 97.4% accuracy, followed closely by CatBoost and Random Forest.
+## Technical Overview
+
+The project demonstrates the effectiveness of machine learning in cybersecurity. Through rigorous testing and model comparison, the Gradient Boosting Classifier was identified as the top-performing model with an accuracy of 97.4%, outperforming alternatives like CatBoost and Random Forest.
 

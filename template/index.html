@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malicious URL Detection</title>
+  <title>Safelink Detection</title>
   <style>
     body {
       margin: 0;
@@ -61,9 +61,9 @@
     <div id="output">
       {% if xx != -1 %}
         {% if xx > 0.5 %}
-          <p class="safe">✅ This website is Safe ({{ xx * 100 }}% confidence)</p>
+          <p class="safe">This website is Safe ({{ xx * 100 }}% confidence)</p>
         {% else %}
-          <p class="unsafe">⚠️ This website is Unsafe ({{ (1 - xx) * 100 }}% confidence)</p>
+          <p class="unsafe">This website is Unsafe ({{ (1 - xx) * 100 }}% confidence)</p>
         {% endif %}
       {% endif %}
     </div>
